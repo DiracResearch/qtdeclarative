@@ -16,6 +16,11 @@ exists("qqml_enable_gcov") {
     LIBS_PRIVATE += -lgcov
 }
 
+ios {
+    QMAKE_CFLAGS += -Wno-aligned-allocation-unavailable 
+    QMAKE_CXXFLAGS += -Wno-aligned-allocation-unavailable 
+}
+
 QMAKE_DOCS = $$PWD/doc/qtquick.qdocconf
 
 ANDROID_LIB_DEPENDENCIES = \
